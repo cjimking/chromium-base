@@ -48,7 +48,7 @@
     <ClCompile Include="..\base\cpu.cc" />
     <ClCompile Include="..\base\string16.cc" />
     <ClCompile Include="..\base\string_piece.cc" />
-    <ClCompile Include="..\base\md5.cc" />
+    <ClCompile Include="..\base\hash\md5.cc" />
     <ClCompile Include="..\base\utf_string_conversion_utils.cc" />
     <ClCompile Include="..\base\utf_string_conversions.cc" />
     <ClCompile Include="..\base\string_util.cc" />
@@ -83,7 +83,6 @@
     <ClCompile Include="..\base\file_version_info_win.cc" />
     <ClCompile Include="..\base\guid.cc" />
     <ClCompile Include="..\base\guid_win.cc" />
-    <ClCompile Include="..\base\hash.cc" />
     <ClCompile Include="..\base\hi_res_timer_manager_win.cc" />
     <ClCompile Include="..\base\lazy_instance.cc" />
     <ClCompile Include="..\base\location.cc" />
@@ -266,8 +265,8 @@
     <ClCompile Include="..\base\threading\worker_pool_win.cc">
       <Filter>threading</Filter>
     </ClCompile>
-    <ClCompile Include="..\base\base_time.cc" />
-    <ClCompile Include="..\base\base_time_win.cc" />
+    <ClCompile Include="..\base\time\time.cc" />
+    <ClCompile Include="..\base\time\time_win.cc" />
     <ClCompile Include="..\base\third_party\modp_b64\modp_b64.cc">
       <Filter>third_party\modp_b64</Filter>
     </ClCompile>
@@ -284,9 +283,16 @@
       <Filter>third_party\icu</Filter>
     </ClCompile>
     <ClCompile Include="..\base\file_descriptor_shuffle.cc" />
-    <ClCompile Include="..\base\sha1_portable.cc" />
+    <ClCompile Include="..\base\hash\sha1_portable.cc" />
     <ClCompile Include="..\base\win\dllmain.cc">
       <Filter>win</Filter>
+    </ClCompile>
+    <ClCompile Include="..\base\hash\hash.cc" />
+    <ClCompile Include="..\base\files\file_path.cc">
+      <Filter>files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\base\files\file_path_constants.cc">
+      <Filter>files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -301,7 +307,7 @@
     <ClInclude Include="..\base\string16.h" />
     <ClInclude Include="..\base\stringize_macros.h" />
     <ClInclude Include="..\base\string_piece.h" />
-    <ClInclude Include="..\base\md5.h" />
+    <ClInclude Include="..\base\hash\md5.h" />
     <ClInclude Include="..\base\utf_string_conversion_utils.h" />
     <ClInclude Include="..\base\utf_string_conversions.h" />
     <ClInclude Include="..\base\string_util.h" />
@@ -349,7 +355,7 @@
     <ClInclude Include="..\base\float_util.h" />
     <ClInclude Include="..\base\format_macros.h" />
     <ClInclude Include="..\base\guid.h" />
-    <ClInclude Include="..\base\hash.h" />
+    <ClInclude Include="..\base\hash\hash.h" />
     <ClInclude Include="..\base\hi_res_timer_manager.h" />
     <ClInclude Include="..\base\id_map.h" />
     <ClInclude Include="..\base\lazy_instance.h" />
@@ -597,7 +603,6 @@
     <ClInclude Include="..\base\threading\worker_pool.h">
       <Filter>threading</Filter>
     </ClInclude>
-    <ClInclude Include="..\base\base_time.h" />
     <ClInclude Include="..\base\critical_closure.h" />
     <ClInclude Include="..\base\third_party\modp_b64\modp_b64.h">
       <Filter>third_party\modp_b64</Filter>
@@ -624,8 +629,12 @@
       <Filter>third_party\icu</Filter>
     </ClInclude>
     <ClInclude Include="..\base\file_descriptor_shuffle.h" />
-    <ClInclude Include="..\base\sha1.h" />
+    <ClInclude Include="..\base\hash\sha1.h" />
     <ClInclude Include="..\base\dispatchers.h" />
     <ClInclude Include="..\base\hash_tables.h" />
+    <ClInclude Include="..\base\time\time.h" />
+    <ClInclude Include="..\base\files\file_path.h">
+      <Filter>files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

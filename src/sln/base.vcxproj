@@ -23,7 +23,7 @@
     <ProjectGuid>{4FCD889E-E390-44B0-B4BD-37DB6F4AC9B6}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>base</RootNamespace>
-    <WindowsTargetPlatformVersion>7.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -232,6 +232,7 @@
     <ClInclude Include="..\base\event_recorder.h" />
     <ClInclude Include="..\base\event_types.h" />
     <ClInclude Include="..\base\files\dir_reader_fallback.h" />
+    <ClInclude Include="..\base\files\file_path.h" />
     <ClInclude Include="..\base\files\file_path_watcher.h" />
     <ClInclude Include="..\base\file_descriptor_shuffle.h" />
     <ClInclude Include="..\base\file_path.h" />
@@ -242,7 +243,7 @@
     <ClInclude Include="..\base\float_util.h" />
     <ClInclude Include="..\base\format_macros.h" />
     <ClInclude Include="..\base\guid.h" />
-    <ClInclude Include="..\base\hash.h" />
+    <ClInclude Include="..\base\hash\hash.h" />
     <ClInclude Include="..\base\hash_tables.h" />
     <ClInclude Include="..\base\hi_res_timer_manager.h" />
     <ClInclude Include="..\base\id_map.h" />
@@ -257,7 +258,7 @@
     <ClInclude Include="..\base\linked_list.h" />
     <ClInclude Include="..\base\location.h" />
     <ClInclude Include="..\base\logging.h" />
-    <ClInclude Include="..\base\md5.h" />
+    <ClInclude Include="..\base\hash\md5.h" />
     <ClInclude Include="..\base\memory\aligned_memory.h" />
     <ClInclude Include="..\base\memory\linked_ptr.h" />
     <ClInclude Include="..\base\memory\mru_cache.h" />
@@ -297,7 +298,7 @@
     <ClInclude Include="..\base\scoped_temp_dir.h" />
     <ClInclude Include="..\base\sequenced_task_runner.h" />
     <ClInclude Include="..\base\sequenced_task_runner_helpers.h" />
-    <ClInclude Include="..\base\sha1.h" />
+    <ClInclude Include="..\base\hash\sha1.h" />
     <ClInclude Include="..\base\shared_memory.h" />
     <ClInclude Include="..\base\single_thread_task_runner.h" />
     <ClInclude Include="..\base\stack_container.h" />
@@ -351,7 +352,7 @@
     <ClInclude Include="..\base\threading\watchdog.h" />
     <ClInclude Include="..\base\threading\worker_pool.h" />
     <ClInclude Include="..\base\thread_task_runner_handle.h" />
-    <ClInclude Include="..\base\base_time.h" />
+    <ClInclude Include="..\base\time\time.h" />
     <ClInclude Include="..\base\timer.h" />
     <ClInclude Include="..\base\utf_offset_string_conversions.h" />
     <ClInclude Include="..\base\utf_string_conversions.h" />
@@ -387,9 +388,7 @@
     <ClCompile Include="..\base\at_exit.cc" />
     <ClCompile Include="..\base\base64.cc" />
     <ClCompile Include="..\base\base_paths.cc" />
-    <ClCompile Include="..\base\base_paths_win.cc">
-      <RemoveUnreferencedCodeData Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</RemoveUnreferencedCodeData>
-    </ClCompile>
+    <ClCompile Include="..\base\base_paths_win.cc" />
     <ClCompile Include="..\base\base_switches.cc" />
     <ClCompile Include="..\base\bind_helpers.cc" />
     <ClCompile Include="..\base\build_time.cc" />
@@ -404,6 +403,8 @@
     <ClCompile Include="..\base\debug\stack_trace_win.cc" />
     <ClCompile Include="..\base\environment.cc" />
     <ClCompile Include="..\base\event_recorder_win.cc" />
+    <ClCompile Include="..\base\files\file_path.cc" />
+    <ClCompile Include="..\base\files\file_path_constants.cc" />
     <ClCompile Include="..\base\files\file_path_watcher.cc" />
     <ClCompile Include="..\base\files\file_path_watcher_win.cc" />
     <ClCompile Include="..\base\file_descriptor_shuffle.cc" />
@@ -414,7 +415,7 @@
     <ClCompile Include="..\base\file_version_info_win.cc" />
     <ClCompile Include="..\base\guid.cc" />
     <ClCompile Include="..\base\guid_win.cc" />
-    <ClCompile Include="..\base\hash.cc" />
+    <ClCompile Include="..\base\hash\hash.cc" />
     <ClCompile Include="..\base\hi_res_timer_manager_win.cc" />
     <ClCompile Include="..\base\json\json_file_value_serializer.cc" />
     <ClCompile Include="..\base\json\json_parser.cc" />
@@ -425,7 +426,7 @@
     <ClCompile Include="..\base\lazy_instance.cc" />
     <ClCompile Include="..\base\location.cc" />
     <ClCompile Include="..\base\logging.cc" />
-    <ClCompile Include="..\base\md5.cc">
+    <ClCompile Include="..\base\hash\md5.cc">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\base\memory\aligned_memory.cc" />
@@ -457,7 +458,7 @@
     <ClCompile Include="..\base\scoped_native_library.cc" />
     <ClCompile Include="..\base\scoped_temp_dir.cc" />
     <ClCompile Include="..\base\sequenced_task_runner.cc" />
-    <ClCompile Include="..\base\sha1_portable.cc" />
+    <ClCompile Include="..\base\hash\sha1_portable.cc" />
     <ClCompile Include="..\base\shared_memory_win.cc" />
     <ClCompile Include="..\base\string16.cc">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
@@ -501,9 +502,9 @@
     <ClCompile Include="..\base\threading\worker_pool.cc" />
     <ClCompile Include="..\base\threading\worker_pool_win.cc" />
     <ClCompile Include="..\base\thread_task_runner_handle.cc" />
-    <ClCompile Include="..\base\base_time.cc" />
+    <ClCompile Include="..\base\time\time.cc" />
     <ClCompile Include="..\base\timer.cc" />
-    <ClCompile Include="..\base\base_time_win.cc" />
+    <ClCompile Include="..\base\time\time_win.cc" />
     <ClCompile Include="..\base\utf_offset_string_conversions.cc" />
     <ClCompile Include="..\base\utf_string_conversions.cc">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
