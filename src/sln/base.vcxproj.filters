@@ -288,12 +288,6 @@
       <Filter>win</Filter>
     </ClCompile>
     <ClCompile Include="..\base\hash\hash.cc" />
-    <ClCompile Include="..\base\files\file_path.cc">
-      <Filter>files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\base\files\file_path_constants.cc">
-      <Filter>files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\base\base_export.h" />
@@ -633,8 +627,5 @@
     <ClInclude Include="..\base\dispatchers.h" />
     <ClInclude Include="..\base\hash_tables.h" />
     <ClInclude Include="..\base\time\time.h" />
-    <ClInclude Include="..\base\files\file_path.h">
-      <Filter>files</Filter>
-    </ClInclude>
   </ItemGroup>
 </Project>

@@ -232,7 +232,6 @@
     <ClInclude Include="..\base\event_recorder.h" />
     <ClInclude Include="..\base\event_types.h" />
     <ClInclude Include="..\base\files\dir_reader_fallback.h" />
-    <ClInclude Include="..\base\files\file_path.h" />
     <ClInclude Include="..\base\files\file_path_watcher.h" />
     <ClInclude Include="..\base\file_descriptor_shuffle.h" />
     <ClInclude Include="..\base\file_path.h" />
@@ -403,8 +402,6 @@
     <ClCompile Include="..\base\debug\stack_trace_win.cc" />
     <ClCompile Include="..\base\environment.cc" />
     <ClCompile Include="..\base\event_recorder_win.cc" />
-    <ClCompile Include="..\base\files\file_path.cc" />
-    <ClCompile Include="..\base\files\file_path_constants.cc" />
     <ClCompile Include="..\base\files\file_path_watcher.cc" />
     <ClCompile Include="..\base\files\file_path_watcher_win.cc" />
     <ClCompile Include="..\base\file_descriptor_shuffle.cc" />
