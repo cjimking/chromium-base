@@ -5,6 +5,7 @@
 
 #include <windows.h>
 #include <shlobj.h>
+#include <KnownFolders.h>
 
 #include "base/base_paths.h"
 #include "base/file_path.h"
@@ -163,8 +164,9 @@ bool PathProviderWin(int key, FilePath* result) {
         return false;
 
       base::win::ScopedCoMem<wchar_t> path_buf;
-      if (FAILED(SHGetKnownFolderPath(FOLDERID_ApplicationShortcuts, 0, NULL,
-                                      &path_buf)))
+      //JIM: remove for compatible of winxp
+      //if (FAILED(SHGetKnownFolderPath(FOLDERID_ApplicationShortcuts, 0, NULL,
+      //                                &path_buf)))
         return false;
 
       cur = FilePath(string16(path_buf));
